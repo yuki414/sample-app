@@ -14,7 +14,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     # sigupできてればflashは存在する=flash.empty=false→assert_notは通る
     # または、assert_not flash.empty=flashが空であってほしくはない=成功、という解釈
     assert_not flash.empty? 
-    
+    assert is_logged_in?
   end
 
   test "invalid signup information" do
